@@ -1,0 +1,50 @@
+# ---------------------------------------------------------------------------
+# PRIVACY: secrets and personal recordings. Never commit.
+# ---------------------------------------------------------------------------
+# Since the cloud path was removed, .env holds only machine config (the hotkey,
+# model names, host). It stays under privacy anyway: it is personal to one
+# machine, and a .env from before the removal may still hold an API key.
+.env
+.env.local
+
+# The words the publish gate searches for that would identify the author.
+# build_release.py reads this file; it must never be committed or published.
+release-private-words.txt
+
+# Captured voice. The app writes to a temp dir and cleans up in a finally
+# block, but --test-audio deliberately leaves a WAV in the project folder.
+*.wav
+*.mp3
+recordings/
+
+# ---------------------------------------------------------------------------
+# BUILD ARTIFACTS: regenerable. Excluded for repo size, not secrecy.
+# ---------------------------------------------------------------------------
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+.venv/
+venv/
+
+# ---------------------------------------------------------------------------
+# MODEL WEIGHTS: regenerable, and very large. Excluded for size.
+# ---------------------------------------------------------------------------
+# faster-whisper caches downloaded weights here if HF_HOME points at the
+# project. Ollama stores its models outside the repo, so nothing to add there.
+models/
+*.bin
+*.onnx
+.cache/
+
+# ---------------------------------------------------------------------------
+# OS / EDITOR CRUFT
+# ---------------------------------------------------------------------------
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Archify working folders: drafts and receipts that record full machine paths.
+.archify/

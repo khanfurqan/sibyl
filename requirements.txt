@@ -1,0 +1,62 @@
+# Sibyl dependencies.
+#
+# Install:
+#   python -m pip install -r requirements.txt
+#
+# Ollama and the clean-up model are NOT installed by this file: they are
+# separate programs. See INSTALL.md for those, and for everything else a
+# first-time setup needs.
+#
+# Versions below are minimum floors rather than exact pins, so that Sibyl still
+# installs on a newer Python than the one it was built against. The exact set
+# it is tested with is in requirements-lock.txt, named at the bottom of this
+# file; pass that to pip instead if you need a bit-for-bit reproducible
+# environment.
+
+# --- Local speech to text --------------------------------------------------
+# faster-whisper runs OpenAI's Whisper through CTranslate2, which is
+# CPU-optimised and supports int8 quantization. That is what makes a laptop
+# without a graphics card fast enough to be useful.
+faster-whisper>=1.0.0
+
+# --- Audio capture ---------------------------------------------------------
+# sounddevice binds PortAudio; soundfile binds libsndfile. Both ship the
+# native library inside their wheels, so there is nothing to install
+# separately.
+sounddevice>=0.4.6
+soundfile>=0.12.1
+numpy>=1.24
+
+# --- Local language model --------------------------------------------------
+# Ollama is reached over plain HTTP on 127.0.0.1 (port 11434 unless
+# SIBYL_OLLAMA_HOST sets another), and nowhere else.
+# No `ollama` package: it is one POST request, and an SDK would earn its weight
+# only if more of the surface were used.
+requests>=2.31.0
+
+# --- Trigger, clipboard, injection ----------------------------------------
+pynput>=1.7.6
+pyperclip>=1.8.2     # macOS only: on Windows, Sibyl writes the clipboard itself,
+                     # to keep dictation out of clipboard history
+pyautogui>=0.9.54
+
+# --- System tray -----------------------------------------------------------
+# pystray renders the tray icon; Pillow draws both it and the status dot.
+pystray>=0.19.5
+pillow>=10.0.0
+
+# --- Settings --------------------------------------------------------------
+# Reads the local .env file. Local configuration only: there are no
+# credentials anywhere in Sibyl, because there is nothing to authenticate to.
+python-dotenv>=1.0.0
+
+# ---------------------------------------------------------------------------
+# The exact versions Sibyl is tested against, on Python 3.12.10 / Windows 11,
+# are in requirements-lock.txt: all 45 packages, including the ones these bring
+# with them. test_release.py checks the two files agree.
+#
+# Non-Python versions tested with, 2026-09-26: Ollama 0.34.4; the clean-up
+# model qwen2.5:3b, fingerprint 357c53fb659c (`ollama list` shows it); the
+# speech model faster-whisper base.en. On 2026-10-09 every test also passed on
+# Ollama 0.35.1.
+# ---------------------------------------------------------------------------
