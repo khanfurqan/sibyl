@@ -418,17 +418,6 @@ story is in **[How it works](docs/HOW-IT-WORKS.md#how-it-was-built)**.
 
 ---
 
-## Related projects
-
-| Project | How it differs |
-|---|---|
-| [Handy](https://github.com/cjpais/Handy) | Cross-platform, offline, and mature. Gives you a transcript; Sibyl's whole point is the clean-up pass after it |
-| [ghost-pepper](https://github.com/matthartman/ghost-pepper) | Also local, also cleans up. Ships as a packaged app with the model bundled; Sibyl uses your existing Ollama install |
-| [Wispr Flow](https://wisprflow.ai/) | Commercial, polished, and the quality bar Sibyl was measured against. Cloud-based |
-| [whisper-writer](https://github.com/savbell/whisper-writer) | Similar shape, GPL licensed |
-
----
-
 ## Licence
 
 **Sibyl is MIT licensed.** See [LICENSE](LICENSE). Use it, change it, ship it.
