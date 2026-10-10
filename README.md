@@ -471,10 +471,6 @@ Sibyl is a thin layer over other people's hard work.
   one-line install instead of a weekend.
 - **[Qwen](https://github.com/QwenLM/Qwen2.5)** (Alibaba Cloud) for the clean-up
   model.
-- **[Handy](https://github.com/cjpais/Handy)** for the documentation structure
-  this README borrows, and
-  **[ghost-pepper](https://github.com/matthartman/ghost-pepper)** for the idea
-  of a privacy audit you can check rather than a badge you have to trust.
 - **`pynput`**, **`pystray`**, **`Pillow`**, **`sounddevice`** / PortAudio,
   **`soundfile`**, **`numpy`**, **`requests`**, **`python-dotenv`**,
   **`pyperclip`** and **`pyautogui`** for the unglamorous parts that are
