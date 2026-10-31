@@ -204,9 +204,8 @@ To get a desktop icon and (optionally) start Sibyl with Windows:
 
 ## Privacy audit
 
-Every feature, and where it runs. Modelled on
-[ghost-pepper](https://github.com/matthartman/ghost-pepper)'s audit, because a
-privacy claim you cannot check is marketing.
+Every feature, and where it runs, because a privacy claim you cannot check is
+marketing.
 
 | Feature | Where it runs | What is sent off the machine |
 |---|---|---|
