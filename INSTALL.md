@@ -61,10 +61,12 @@ it means: type or paste that line into the PowerShell window, then press
 file, so your computer needs Python in order to run it — the same way a `.docx`
 file needs Word.
 
-1. Go to **<https://www.python.org/downloads/windows/>**
-2. Download the latest **Windows installer (64-bit)**. Sibyl is developed and
-   tested on **Python 3.12**. Anything from 3.10 upwards should work, but only
-   3.12 has been measured.
+1. Download **Python 3.12.10**, the 64-bit Windows installer, from this exact
+   link: **<https://www.python.org/ftp/python/3.12.10/python-3.12.10-amd64.exe>**
+2. **Do not take the newest Python that python.org offers instead.** Sibyl is
+   developed and tested on 3.12. On the newest version, 3.15, Sibyl cannot
+   install at all: one library the speech recogniser depends on has no Windows
+   version for it yet (checked 31 October 2026).
 3. Run the installer. **Before clicking Install, tick the box that says
    "Add python.exe to PATH"** at the bottom of the first screen.
 
@@ -158,6 +160,9 @@ Two ways. Pick one.
 2. Right-click the downloaded ZIP → **Extract All**. Put it somewhere you will
    not accidentally delete — your Documents folder is fine, your Downloads
    folder is not.
+3. Windows puts the files one folder deeper than you would expect: inside the
+   `sibyl-main` folder it made, there is another `sibyl-main`. **The inner one is
+   your Sibyl folder**, the one holding `sibyl.py`.
 
 **The way that makes updates easy** (needs [Git](https://git-scm.com/download/win)
 installed):
@@ -200,7 +205,7 @@ tested with on Python 3.12, so nothing arrives that was never tried.
 
 This takes a couple of minutes and prints a great deal of text. That is normal.
 
-**If you installed a Python other than 3.12** and pip stops with "No matching
+**If you already had a Python other than 3.12** and pip stops with "No matching
 distribution found", one of those exact versions was not made for your Python.
 Use the looser list instead, which takes the newest version of each library that
 Sibyl allows:
@@ -208,6 +213,8 @@ Sibyl allows:
 ```powershell
 python -m pip install -r requirements.txt
 ```
+
+If that stops the same way, install Python 3.12.10 from step 2.
 
 **What success looks like.** The last lines say `Successfully installed` followed
 by a list of names and version numbers. A line in yellow about upgrading `pip`

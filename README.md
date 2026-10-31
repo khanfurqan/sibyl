@@ -50,7 +50,6 @@ cloud code path to switch off.
 - [Project layout](#project-layout)
 - [Running the tests](#running-the-tests)
 - [How it was built](#how-it-was-built)
-- [Related projects](#related-projects)
 - [Licence](#licence)
 - [Acknowledgements](#acknowledgements)
 
@@ -174,7 +173,7 @@ Full step-by-step instructions, written for someone who has never installed
 Python, are in **[INSTALL.md](INSTALL.md)**. The short version:
 
 ```powershell
-# 1. Prerequisites: Python 3.10+ and Ollama, both on PATH.
+# 1. Prerequisites: Python 3.12 and Ollama, both on PATH.
 ollama pull qwen2.5:3b
 
 # 2. Get Sibyl and its Python libraries. Copy the address from the green
